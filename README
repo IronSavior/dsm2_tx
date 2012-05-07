@@ -1,8 +1,9 @@
-DSM2_tx is an Arduino library that provides a simple API for controlling the RF modules that may be
-found in many DSM2-compatible transmitters.  I think this should be useful to anyone who wishes to
-develop their own custom control hardware or otherwise need to write their own transmitter logic.  I
-started work on this in order to control my DSM2 receivers and models with a USB joystick, for
-example.
+DSM2_tx is an Arduino library that provides a simple API for controlling the RF
+modules that may be found in many DSM2-compatible transmitters.  I think this
+should be useful to anyone who wishes to develop their own custom control
+hardware or otherwise need to write their own transmitter logic.  I started
+work on this in order to control my DSM2 receivers and models with a USB
+joystick, for example.
 
 To install, add libraries/dsm2_tx to your Arduino/libraries directory.
 See the examples directory for working code examples.
