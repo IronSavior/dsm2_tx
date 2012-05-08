@@ -18,8 +18,8 @@
 */
 #include "dsm2_tx.h"
 
-#define BIND_SWITCH  7
-#define BIND_LED     4
+#define BIND_SWITCH  2
+#define BIND_LED     3
 #define ERROR_LED    5
 
 DSM2_tx tx(6);
