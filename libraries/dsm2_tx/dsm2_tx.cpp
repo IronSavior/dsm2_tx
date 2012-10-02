@@ -17,6 +17,13 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 */
+
+#ifndef _TEST_
+#include <Arduino.h>
+#else
+#include "dsm2_tx.test.h"
+#endif
+
 #include "dsm2_tx.h"
 
 void DSM2_tx::begin() {
@@ -28,7 +35,7 @@ void DSM2_tx::end() {
 }
 
 // Channel index is zero-based
-int DSM2_tx::set_channel( word channel, unsigned int value, unsigned int bound_max, unsigned int bound_min ){
+int DSM2_tx::set_channel( unsigned int channel, unsigned int value, unsigned int bound_max, unsigned int bound_min ){
   if( state == BINDING ) return 1;
   if( channel >= channel_count ) return 1;
   word v = channel << 10 | map(value, bound_min, bound_max, CHANNEL_MIN_VALUE, CHANNEL_MAX_VALUE);
