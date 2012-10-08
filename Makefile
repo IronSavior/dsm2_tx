@@ -1,6 +1,6 @@
 SOURCES = test/dsm2_tx-test.cpp \
           libraries/dsm2_tx/dsm2_tx.cpp \
-		  arduino/WMath.cpp
+          arduino/WMath.cpp
 
 OBJECTS := $(addsuffix .o, $(addprefix .build/, $(basename $(SOURCES))))
 DEPFILES := $(subst .o,.dep, $(subst .build/,.deps/, $(OBJECTS)))
