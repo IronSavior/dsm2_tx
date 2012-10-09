@@ -33,4 +33,6 @@ unsigned long millis();
 // WMath.cpp
 long map(long, long, long, long, long);
 
+void initialize_mock_arduino(); 
+
 #include "fake_serial.h"

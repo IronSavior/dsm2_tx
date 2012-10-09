@@ -18,6 +18,10 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 */
 
+#include <cstring>
+#include <iostream>
+#include <iomanip>
+
 #include "fake_serial.h"
 
 void FakeSerial::begin(unsigned long speed) {

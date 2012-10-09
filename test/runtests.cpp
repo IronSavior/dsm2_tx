@@ -21,8 +21,41 @@
 #include "mock_arduino.h"
 #include "dsm2_tx.h"
 
+using namespace std;
+
+void millis_test() {
+  unsigned long start = millis();
+  cout << "millis() test start: " << start << endl;
+  while( millis() - start < 10000 ) {
+    cout << millis() << endl;
+    sleep(1);
+  }
+  unsigned long end = millis();
+  cout << "End of test - duration: " << end - start << "ms" << endl;
+}
+
+void delay_test() {
+  unsigned long start = millis();
+  cout << "delay() test start: " << start << endl;
+  while( millis() - start < 10000 ) {
+    cout << millis() << endl;
+    delay(250);
+  }
+  unsigned long end = millis();
+  cout << "End of test - duration: " << end - start << "ms" << endl;
+}
+
+void run_tests();
 int main(int argc, char **argv){
+  initialize_mock_arduino();
+  run_tests();
+}
+
+void run_tests() {
   DSM2_tx tx(6);
-  tx.begin();
+  tx.bind();
+  for( int i = 0; i < 6; i++) {
+    tx.set_channel(i, 0);
+  }
   tx.send_frame();
 }
