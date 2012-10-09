@@ -1,6 +1,6 @@
 SOURCES = test/runtests.cpp \
           test/fake_serial.cpp \
-	  test/mock_arduino.cpp \
+	      test/mock_arduino.cpp \
           libraries/dsm2_tx/dsm2_tx.cpp \
           arduino/WMath.cpp
 
