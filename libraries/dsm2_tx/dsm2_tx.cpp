@@ -21,7 +21,7 @@
 #ifndef _TEST_
 #include <Arduino.h>
 #else
-#include "dsm2_tx-test.h"
+#include "mock_arduino.h"
 #endif
 
 #include "dsm2_tx.h"
