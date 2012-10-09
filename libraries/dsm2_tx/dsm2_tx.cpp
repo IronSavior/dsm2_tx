@@ -67,7 +67,7 @@ int DSM2_tx::bind( void (*cb)(int,byte), byte model_id,  unsigned int duration_m
   state = BINDING;
   
   byte bind_buf[sizeof(tx_buf)] = BIND_MAGIC;
-  std::memcpy(&tx_buf, &bind_buf, sizeof(tx_buf));
+  memcpy(&tx_buf, &bind_buf, sizeof(tx_buf));
   tx_buf.model_id = model_id;
   
   unsigned long timeout = millis() + duration_ms;

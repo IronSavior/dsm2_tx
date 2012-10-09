@@ -16,6 +16,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 */
+#include "Arduino.h"
 #include "dsm2_tx.h"
 
 #define BIND_SWITCH  2
