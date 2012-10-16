@@ -20,6 +20,8 @@
 
 #include "mock_arduino.h"
 #include "dsm2_tx.h"
+#include "raw_input.h"
+#include "trim.h"
 
 using namespace std;
 
@@ -45,6 +47,59 @@ void delay_test() {
   cout << "End of test - duration: " << end - start << "ms" << endl;
 }
 
+void raw_input_test() {
+  RawInput raw;
+  InputElement &input = raw;
+  
+  cout << "raw initial value: " << raw.value() << endl;
+  
+  raw.set_value(-16);
+  cout << "raw value " << raw.value() << " (expected: -16)" << endl;
+  cout << "input value " << input.value() << " (expected: -16)" << endl;
+}
+
+void bind_test() {
+  DSM2_tx tx(6);
+  tx.bind();
+}
+
+void transmit_frame_test() {
+  DSM2_tx tx(6);
+  for( int i = 0; i < 6; i++) {
+    tx.set_channel(i, 0);
+  }
+  tx.send_frame();
+}
+
+void trim_test() {
+  RawInput raw;
+  Trim trim;
+  trim.set_source(raw);
+  InputElement &input = trim;
+  
+  cout << "  Trim Tests" << endl;
+  cout << "initial value: " << input.value() << endl;
+  raw.set_value(32000);
+  trim.set_offset(0);
+  cout << "1 offset 0: " << input.value() << endl;
+}
+
+void map_test() {
+  long x, fromlow, fromhigh, tolow, tohigh;
+  fromlow  = InputElement::MIN_VALUE;
+  fromhigh = InputElement::MAX_VALUE;
+  tolow = InputElement::MIN_VALUE;
+  tohigh = InputElement::MAX_VALUE;
+  x = 0;
+  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = 1;
+  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = -1;
+  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = 5;
+  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+}
+
 void run_tests();
 int main(int argc, char **argv){
   initialize_mock_arduino();
@@ -52,10 +107,7 @@ int main(int argc, char **argv){
 }
 
 void run_tests() {
-  DSM2_tx tx(6);
-  tx.bind();
-  for( int i = 0; i < 6; i++) {
-    tx.set_channel(i, 0);
-  }
-  tx.send_frame();
+  cout << "min: " << InputElement::MIN_VALUE << " max: " << InputElement::MAX_VALUE << endl;
+  trim_test();
+  map_test();
 }

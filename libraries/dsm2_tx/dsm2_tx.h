@@ -18,6 +18,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.  
 */
 
+#pragma once
+
 // Channel values are 10-bits wide and unsigned, maximum value is 0x03FF
 #define CHANNEL_MIN_VALUE  0
 #define CHANNEL_MAX_VALUE  0x03FF
