@@ -79,25 +79,76 @@ void trim_test() {
   
   cout << "  Trim Tests" << endl;
   cout << "initial value: " << input.value() << endl;
-  raw.set_value(32000);
-  trim.set_offset(0);
-  cout << "1 offset 0: " << input.value() << endl;
+  raw.set_value(1);
+  trim.set_margin(0);
+  trim.set_offset(1);
+  cout << "max offset 0: " << input.value() << endl;
+}
+
+
+void print_map_test(long fromlow, long fromhigh, long tolow, long tohigh) {
+  long x = 0;
+  cout << "center x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = 1;
+  cout << "center +1 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = -1;
+  cout << "center -1 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = 33;
+  cout << "center +33 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = -33;
+  cout << "center -33 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MIN_VALUE+1;
+  cout << "min +1 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MAX_VALUE-1;
+  cout << "max -1 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MIN_VALUE+33;
+  cout << "min +33 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MAX_VALUE-45;
+  cout << "max -33 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MIN_VALUE/2;
+  cout << "min/2 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MAX_VALUE/2;
+  cout << "max/2 x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MIN_VALUE;
+  cout << "min x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  x = InputElement::MAX_VALUE;
+  cout << "max x= " << x << ": " << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  cout << endl;
 }
 
 void map_test() {
   long x, fromlow, fromhigh, tolow, tohigh;
   fromlow  = InputElement::MIN_VALUE;
   fromhigh = InputElement::MAX_VALUE;
+  
+  cout << "** map tests" << endl;
+  cout <<  "min: " << InputElement::MIN_VALUE;
+  cout << " max: " << InputElement::MAX_VALUE << endl;
+
+  cout << "Target range same as source:" << endl;
   tolow = InputElement::MIN_VALUE;
   tohigh = InputElement::MAX_VALUE;
-  x = 0;
-  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
-  x = 1;
-  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
-  x = -1;
-  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
-  x = 5;
-  cout << map(x,fromlow,fromhigh,tolow,tohigh) << endl;
+  print_map_test(fromlow,fromhigh,tolow,tohigh);
+
+  cout << "10% reduced margin:" << endl;
+  tolow = InputElement::MIN_VALUE-InputElement::MIN_VALUE/10;
+  tohigh = InputElement::MAX_VALUE-InputElement::MAX_VALUE/10;
+  print_map_test(fromlow,fromhigh,tolow,tohigh);
+
+  cout << "25% reduced margin:" << endl;
+  tolow = InputElement::MIN_VALUE-InputElement::MIN_VALUE/4;
+  tohigh = InputElement::MAX_VALUE-InputElement::MAX_VALUE/4;
+  print_map_test(fromlow,fromhigh,tolow,tohigh);
+
+  cout << "reduced margin by 1:" << endl;
+  tolow = InputElement::MIN_VALUE+1;
+  tohigh = InputElement::MAX_VALUE-1;
+  print_map_test(fromlow,fromhigh,tolow,tohigh);
+
+  cout << "Target range 0 - 0x03FF:" << endl;
+  tolow = 0;
+  tohigh = 0x03FF;
+  print_map_test(fromlow,fromhigh,tolow,tohigh);
 }
 
 void run_tests();
@@ -107,7 +158,6 @@ int main(int argc, char **argv){
 }
 
 void run_tests() {
-  cout << "min: " << InputElement::MIN_VALUE << " max: " << InputElement::MAX_VALUE << endl;
-  trim_test();
+  //trim_test();
   map_test();
 }

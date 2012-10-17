@@ -29,9 +29,7 @@ typedef unsigned short int word;
 unsigned long millis();
 void delay(unsigned long ms);
 unsigned long millis();
-
-// WMath.cpp
-long map(long, long, long, long, long);
+long map(long x, long in_min, long in_max, long out_min, long out_max);
 
 void initialize_mock_arduino(); 
 

@@ -28,11 +28,15 @@ unsigned long millis() {
   return (t_now.time  - t_start.time) * 1000 + (t_now.millitm - t_start.millitm);
 }
 
-void delay(unsigned long ms) {
+void delay( unsigned long ms ) {
   unsigned long start = millis();
   while(millis() - start < ms){}
 }
 
 void initialize_mock_arduino() {
   ftime(&t_start);
+}
+
+long map( long x, long in_min, long in_max, long out_min, long out_max ) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
