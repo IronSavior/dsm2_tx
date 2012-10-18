@@ -23,8 +23,9 @@
 
 class InputElement {
 public:
-  // map() seems to choke if this range is too wide.
+  // map() seems to choke if MAX_VALUE - MIN_VALUE is too broad.
   static const int MIN_VALUE = SHRT_MIN/2;
   static const int MAX_VALUE = SHRT_MAX/2;
+  static const int CENTER_VALUE = 0;
   virtual int value() = 0;
 };
