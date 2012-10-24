@@ -3,7 +3,9 @@ SOURCES = test/runtests.cpp \
           test/mock_arduino.cpp \
           libraries/dsm2_tx/dsm2_tx.cpp \
           libraries/dsm2_tx/raw_input.cpp \
-          libraries/dsm2_tx/trim.cpp
+          libraries/dsm2_tx/trim.cpp \
+          libraries/dsm2_tx/interpolated_curve.cpp \
+          libraries/dsm2_tx/expo_curve.cpp
 
 OBJECTS := $(addsuffix .o, $(addprefix .build/, $(basename $(SOURCES))))
 DEPFILES := $(subst .o,.dep, $(subst .build/,.deps/, $(OBJECTS)))

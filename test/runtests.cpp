@@ -22,6 +22,8 @@
 #include "dsm2_tx.h"
 #include "raw_input.h"
 #include "trim.h"
+#include "interpolated_curve.h"
+#include "expo_curve.h"
 
 using namespace std;
 
@@ -151,6 +153,24 @@ void map_test() {
   print_map_test(fromlow,fromhigh,tolow,tohigh);
 }
 
+void print_expo_test( ExpoCurve &curve ) {
+  unsigned int count = curve.get_point_count();
+  InterpolatedCurve::Point *points = curve.get_points();
+  cout << "Expo Test - points: " << count << " - factor: " << curve.get_factor() << endl;
+  for( int i = 0; i < count; i++) {
+    cout << "  in: \t" << points[i].x << " out: \t" << points[i].y << endl;
+  }
+  cout << endl;
+}
+
+void expo_test() {
+  ExpoCurve curve;
+  for( float factor = 0.0; factor < 1.1; factor += 0.1 ) {
+    curve.set_factor(factor);
+    print_expo_test(curve);
+  }
+}
+
 void run_tests();
 int main(int argc, char **argv){
   initialize_mock_arduino();
@@ -158,6 +178,5 @@ int main(int argc, char **argv){
 }
 
 void run_tests() {
-  //trim_test();
-  map_test();
+  expo_test();
 }
