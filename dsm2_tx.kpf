@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="b308969f-f927-46c2-9cde-757e79db9bd5" kpf_version="5" name="dsm2_tx.kpf.komodoproject">
+<preference-set idref="b308969f-f927-46c2-9cde-757e79db9bd5">
+  <long id="codeintel_highlight_variables_auto_delay">250</long>
+  <boolean id="codeintel_highlight_variables_auto_keyboard">0</boolean>
+  <boolean id="codeintel_highlight_variables_auto_mouse">1</boolean>
+  <boolean id="codeintel_highlight_variables_match_prefix">0</boolean>
+  <long id="codeintel_highlight_variables_min_auto_length">2</long>
+  <boolean id="codeintel_highlight_variables_use_scope">1</boolean>
+  <boolean id="dedentOnColon">0</boolean>
+  <string id="defaultDateFormat">%25a %25b %25d %25H:%25M:%25S %25Y</string>
+  <string id="editAutoIndentStyle">smart</string>
+  <long id="editAutoWrapColumn">120</long>
+  <boolean id="editBackspaceDedents">1</boolean>
+  <boolean id="editElectricBrace">1</boolean>
+  <boolean id="editFoldLines">1</boolean>
+  <string id="editFoldStyle">squaretree</string>
+  <boolean id="editRestoreFoldPoints">0</boolean>
+  <boolean id="editSmartCutCopyWithoutSelection">1</boolean>
+  <boolean id="editSmartSoftCharacters">1</boolean>
+  <boolean id="editTabCompletes">0</boolean>
+  <boolean id="editUseEdge">1</boolean>
+  <boolean id="editUseLinting">1</boolean>
+  <long id="editWordWrapIndentation">0</long>
+  <long id="editWordWrapMarker">0</long>
+  <long id="editWrapType">0</long>
+  <boolean id="enableSmartSoftCharactersInsideLine">0</boolean>
+  <boolean id="encodingAutoDetect">1</boolean>
+  <string id="encodingDefault">cp1252</string>
+  <boolean id="encodingEnvironment">1</boolean>
+  <boolean id="encodingHTML">0</boolean>
+  <boolean id="encodingModeline">1</boolean>
+  <boolean id="encodingXMLDec">1</boolean>
+  <boolean id="foldSeparateBlockParts">0</boolean>
+  <boolean id="hyperlinksEnableGotoDefinition">1</boolean>
+  <boolean id="hyperlinksEnabled">1</boolean>
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;_svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__;*.exe;.build;.deps</string>
+  <string id="import_include_matches">Makefile;README;LICENSE;.gitignore;*.cpp;*.h;*.ino</string>
+  <boolean id="indentStringsAfterParens">0</boolean>
+  <long id="indentWidth">2</long>
+  <string id="javascriptExtraPaths"></string>
+  <string id="jshintOptions"></string>
+  <string id="jshint_linter_chooser">default</string>
+  <string id="jshint_linter_specific"></string>
+  <string id="jslintOptions"></string>
+  <string id="jslint_linter_chooser">default</string>
+  <string id="jslint_linter_specific"></string>
+<preference-set id="languages">
+<preference-set id="languages/Ada">
+  <boolean id="Ada/newBOM">0</boolean>
+  <string id="Ada/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Apache">
+  <boolean id="Apache/newBOM">0</boolean>
+  <string id="Apache/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Baan">
+  <boolean id="Baan/newBOM">0</boolean>
+  <string id="Baan/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Batch">
+  <boolean id="Batch/newBOM">0</boolean>
+  <string id="Batch/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Bullant">
+  <boolean id="Bullant/newBOM">0</boolean>
+  <string id="Bullant/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/C#">
+  <boolean id="C#/newBOM">0</boolean>
+  <string id="C#/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/C++">
+  <boolean id="C++/newBOM">0</boolean>
+  <string id="C++/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/CSS">
+  <boolean id="CSS/newBOM">0</boolean>
+  <string id="CSS/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Diff">
+  <boolean id="Diff/newBOM">0</boolean>
+  <string id="Diff/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Eiffel">
+  <boolean id="Eiffel/newBOM">0</boolean>
+  <string id="Eiffel/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Erlang">
+  <long id="indentWidth">4</long>
+  <boolean id="primary">1</boolean>
+</preference-set>
+<preference-set id="languages/Errors">
+  <boolean id="C++/newBOM">0</boolean>
+  <string id="C++/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Fortran">
+  <boolean id="Fortran/newBOM">0</boolean>
+  <string id="Fortran/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Fortran 77">
+  <boolean id="Fortran 77/newBOM">0</boolean>
+  <string id="Fortran 77/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/HTML">
+  <boolean id="HTML/newBOM">0</boolean>
+  <string id="HTML/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/IDL">
+  <boolean id="IDL/newBOM">0</boolean>
+  <string id="IDL/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Java">
+  <boolean id="Java/newBOM">0</boolean>
+  <string id="Java/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/JavaScript">
+  <boolean id="JavaScript/newBOM">0</boolean>
+  <string id="JavaScript/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/LaTeX">
+  <boolean id="LaTeX/newBOM">0</boolean>
+  <string id="LaTeX/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Lisp">
+  <boolean id="Lisp/newBOM">0</boolean>
+  <string id="Lisp/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Lua">
+  <boolean id="Lua/newBOM">0</boolean>
+  <string id="Lua/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Makefile">
+  <boolean id="Makefile/newBOM">0</boolean>
+  <string id="Makefile/newEncoding">Default Encoding</string>
+  <boolean id="primary">1</boolean>
+</preference-set>
+<preference-set id="languages/Matlab">
+  <boolean id="Matlab/newBOM">0</boolean>
+  <string id="Matlab/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/PHP">
+  <boolean id="PHP/newBOM">0</boolean>
+  <string id="PHP/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Pascal">
+  <boolean id="Pascal/newBOM">0</boolean>
+  <string id="Pascal/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Perl">
+  <boolean id="Perl/newBOM">0</boolean>
+  <string id="Perl/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Python">
+  <boolean id="Python/newBOM">0</boolean>
+  <string id="Python/newEncoding">ascii</string>
+</preference-set>
+<preference-set id="languages/RHTML">
+  <boolean id="RHTML/newBOM">0</boolean>
+  <string id="RHTML/newEncoding">Default Encoding</string>
+  <long id="indentWidth">2</long>
+</preference-set>
+<preference-set id="languages/Ruby">
+  <boolean id="Ruby/newBOM">0</boolean>
+  <string id="Ruby/newEncoding">Default Encoding</string>
+  <long id="indentWidth">2</long>
+</preference-set>
+<preference-set id="languages/SQL">
+  <boolean id="SQL/newBOM">0</boolean>
+  <string id="SQL/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Tcl">
+  <boolean id="Tcl/newBOM">0</boolean>
+  <string id="Tcl/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/Text">
+  <boolean id="Text/newBOM">0</boolean>
+  <string id="Text/newEncoding">Default Encoding</string>
+</preference-set>
+<preference-set id="languages/VisualBasic">
+  <boolean id="VisualBasic/newBOM">0</boolean>
+  <string id="VisualBasic/newEncoding">utf-8</string>
+</preference-set>
+<preference-set id="languages/XML">
+  <boolean id="XML/newBOM">0</boolean>
+  <string id="XML/newEncoding">utf-8</string>
+</preference-set>
+<preference-set id="languages/XSLT">
+  <boolean id="XSLT/newBOM">0</boolean>
+  <string id="XSLT/newEncoding">utf-8</string>
+</preference-set>
+<preference-set id="languages/nnCrontab">
+  <boolean id="nnCrontab/newBOM">0</boolean>
+  <string id="nnCrontab/newEncoding">Default Encoding</string>
+</preference-set>
+</preference-set>
+  <boolean id="lintClearOnTextChange">0</boolean>
+  <long id="lintDelay">1000</long>
+  <boolean id="lintEOLs">1</boolean>
+  <boolean id="lintHTML5Lib">0</boolean>
+  <boolean id="lintHTMLTidy">1</boolean>
+  <boolean id="lintHTML_CheckWith_Perl_HTML_Lint">0</boolean>
+  <boolean id="lintHTML_CheckWith_Perl_HTML_Tidy">0</boolean>
+  <boolean id="lintJavaScriptEnableStrict">1</boolean>
+  <boolean id="lintJavaScriptEnableWarnings">1</boolean>
+  <boolean id="lintJavaScript_SpiderMonkey">1</boolean>
+  <boolean id="lintWithJSHint">0</boolean>
+  <boolean id="lintWithJSLint">0</boolean>
+  <boolean id="lint_coffee_script">1</boolean>
+  <boolean id="lint_python3_with_standard_python">1</boolean>
+  <boolean id="lint_python_with_pychecker">0</boolean>
+  <boolean id="lint_python_with_pyflakes">0</boolean>
+  <boolean id="lint_python_with_pylint">0</boolean>
+  <boolean id="lint_python_with_standard_python">1</boolean>
+  <string id="mappedPaths"></string>
+  <string id="nodejsDefaultInterpreter"></string>
+  <string id="nodejsExtraPaths"></string>
+  <string id="perl_lintOption">cwT</string>
+  <boolean id="perl_lintOption_disableBeginBlocks">1</boolean>
+  <boolean id="perl_lintOption_includeCurrentDirForLinter">0</boolean>
+  <string id="perl_lintOption_perlCriticLevel">off</string>
+  <string id="pychecker_checking_rcfile"></string>
+  <string id="pychecker_wrapper_location"></string>
+  <string id="pylint_checking_rcfile"></string>
+  <string id="ruby_lintOption">cwT</string>
+  <boolean id="showIndentationGuides">1</boolean>
+  <long id="tabWidth">8</long>
+  <string id="tidy_accessibility">0</string>
+  <string id="tidy_configpath"></string>
+  <string id="tidy_errorlevel">errors</string>
+  <boolean id="useSmartTabs">0</boolean>
+  <boolean id="useTabs">0</boolean>
+  <string id="userEnvironmentStartupOverride"></string>
+</preference-set>
+</project>
