@@ -40,7 +40,7 @@ void ExpoCurve::compute_points() {
   for( unsigned int i = 0; i < EXPO_POINTS; i++ ) {
     float x = 2.0/(EXPO_POINTS - 1.0) * i - 1.0;
     float y = ((k-1.0)*x*x*x*x*x + x)/k;
-    _points[i].x = x * MAX_VALUE;
-    _points[i].y = y * MAX_VALUE;
+    _points[i].x = (int)(x * MAX_VALUE);
+    _points[i].y = (int)(y * MAX_VALUE);
   }
 }
