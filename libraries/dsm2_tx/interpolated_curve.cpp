@@ -26,8 +26,24 @@
 
 #include "interpolated_curve.h"
 
+/* This method makes the following assumptions:
+ *   1. The _points[] data member contians at least 2 defined Points.
+ *   2. All defined Points have x and y values between MIN_VALUE and MAX_VALUE.
+ *   3. The Points in the array are ordered according to ascending values of x.
+ */
 int InterpolatedCurve::value() {
-  return 0;
+  int v = constrain(_upstream->value(), MIN_VALUE, MAX_VALUE);
+  if( _point_count < 2 ) { return v; }  // Error condition
+  if( _points[0].x >= v ) { return _points[0].y; }
+  for( unsigned int i = 1; i < _point_count; i++ ) {
+    if( _points[i].x >= v ) {
+      return map(v, _points[i-1].x, _points[i].x,
+                    _points[i-1].y, _points[i].y);
+    }
+  }
+  // This is an error condition that is not otherwise reported.
+  // It won't happen as long as the points are set up correctly.
+  return v;
 }
 
 void InterpolatedCurve::set_source( InputElement &upstream ) {

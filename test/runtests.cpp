@@ -153,22 +153,40 @@ void map_test() {
   print_map_test(fromlow,fromhigh,tolow,tohigh);
 }
 
-void print_expo_test( ExpoCurve &curve ) {
+void print_expo_points_test( ExpoCurve &curve ) {
   unsigned int count = curve.get_point_count();
   InterpolatedCurve::Point *points = curve.get_points();
-  cout << "Expo Test - points: " << count << " - factor: " << curve.get_factor() << endl;
+  cout << "Expo Points Test - points: " << count << " - factor: " << curve.get_factor() << endl;
   for( int i = 0; i < count; i++) {
-    cout << "  in: \t" << points[i].x << " out: \t" << points[i].y << endl;
+    cout << "  " << i << ":    " << points[i].x << " \t , \t " << points[i].y << endl;
   }
   cout << endl;
 }
 
-void expo_test() {
+void expo_points_test() {
   ExpoCurve curve;
   for( float factor = 0.0; factor < 1.1; factor += 0.1 ) {
     curve.set_factor(factor);
-    print_expo_test(curve);
+    print_expo_points_test(curve);
   }
+}
+
+void expo_values_test() {
+  ExpoCurve expo;
+  RawInput raw;
+  expo.set_source(raw);
+  expo.set_factor(0.5);
+  print_expo_points_test(expo);
+  cout << "Expo Values Test -- factor: " << expo.get_factor() << endl;
+  ExpoCurve::Point p1, p2;
+  for( int v = RawInput::MIN_VALUE; v < RawInput::MAX_VALUE; v += RawInput::MAX_VALUE/5 ) {
+    raw.set_value(v);
+    expo.select_points(&p1, &p2);
+    cout << "  x = " << raw.value() << "  between (" << p1.x << "," << p1.y << ") and (" << p2.x << "," << p2.y << ")  y = " << expo.value() << endl;
+  }
+  raw.set_value(RawInput::MAX_VALUE);
+  cout << "  x = " << raw.value() << "  between (" << p1.x << "," << p1.y << ") and (" << p2.x << "," << p2.y << ")  y = " << expo.value() << endl;
+  cout << endl;
 }
 
 void run_tests();
@@ -178,5 +196,5 @@ int main(int argc, char **argv){
 }
 
 void run_tests() {
-  expo_test();
+  expo_values_test();
 }
