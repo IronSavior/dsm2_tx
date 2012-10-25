@@ -16,8 +16,7 @@ RUNTEST := $(if $(COMSPEC), runtests.exe, runtests)
 all: runtests
 
 .build/%.o: %.cpp
-	mkdir -p .deps/$(dir $<)
-	mkdir -p .build/$(dir $<)
+	@mkdir -p .deps/$(dir $<) .build/$(dir $<)
 	$(COMPILE.cpp) $(TESTCPPFLAGS) $(CPPDEPFLAGS) -o $@ $<
 
 runtests: $(OBJECTS)

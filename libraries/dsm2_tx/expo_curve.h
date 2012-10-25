@@ -20,7 +20,6 @@
 
 #pragma once
 #include "interpolated_curve.h"
-#include <cstddef>
 
 class ExpoCurve : public InterpolatedCurve {
 protected:
