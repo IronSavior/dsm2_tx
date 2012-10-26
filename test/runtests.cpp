@@ -178,14 +178,10 @@ void expo_values_test() {
   expo.set_factor(0.5);
   print_expo_points_test(expo);
   cout << "Expo Values Test -- factor: " << expo.get_factor() << endl;
-  ExpoCurve::Point p1, p2;
-  for( int v = RawInput::MIN_VALUE; v < RawInput::MAX_VALUE; v += RawInput::MAX_VALUE/5 ) {
+  for( int v = RawInput::MIN_VALUE; v <= RawInput::MAX_VALUE; v += RawInput::MAX_VALUE/5 ) {
     raw.set_value(v);
-    expo.select_points(&p1, &p2);
-    cout << "  x = " << raw.value() << "  between (" << p1.x << "," << p1.y << ") and (" << p2.x << "," << p2.y << ")  y = " << expo.value() << endl;
+    cout << "  x = " << raw.value() << "  y = " << expo.value() << endl;
   }
-  raw.set_value(RawInput::MAX_VALUE);
-  cout << "  x = " << raw.value() << "  between (" << p1.x << "," << p1.y << ") and (" << p2.x << "," << p2.y << ")  y = " << expo.value() << endl;
   cout << endl;
 }
 
