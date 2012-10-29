@@ -13,7 +13,7 @@ RUNTEST := $(if $(COMSPEC), runtests.exe, runtests)
 
 TESTCPPFLAGS := -D_TEST_ -Ilibraries/dsm2_tx -Itest
 DEPCPPFLAGS := -MMD -MP -MF .deps/$(basename $<).dep
-CPPFLAGS ?= -Wall
+CPPFLAGS ?= -Wall -Os
 
 all: runtests
 
