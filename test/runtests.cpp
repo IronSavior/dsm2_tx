@@ -119,7 +119,7 @@ void print_map_test(long fromlow, long fromhigh, long tolow, long tohigh) {
 }
 
 void map_test() {
-  long x, fromlow, fromhigh, tolow, tohigh;
+  long fromlow, fromhigh, tolow, tohigh;
   fromlow  = InputElement::MIN_VALUE;
   fromhigh = InputElement::MAX_VALUE;
   
@@ -154,7 +154,7 @@ void map_test() {
 }
 
 void print_expo_points_test( ExpoCurve &curve ) {
-  unsigned int count = curve.get_point_count();
+  int count = curve.get_point_count();
   InterpolatedCurve::Point *points = curve.get_points();
   cout << "Expo Points Test - points: " << count << " - factor: " << curve.get_factor() << endl;
   for( int i = 0; i < count; i++) {

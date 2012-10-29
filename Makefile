@@ -9,15 +9,17 @@ SOURCES = test/runtests.cpp \
 
 OBJECTS := $(addsuffix .o, $(addprefix .build/, $(basename $(SOURCES))))
 DEPFILES := $(subst .o,.dep, $(subst .build/,.deps/, $(OBJECTS)))
-TESTCPPFLAGS = -D_TEST_ -Ilibraries/dsm2_tx -Itest
-CPPDEPFLAGS = -MMD -MP -MF .deps/$(basename $<).dep
 RUNTEST := $(if $(COMSPEC), runtests.exe, runtests)
+
+TESTCPPFLAGS := -D_TEST_ -Ilibraries/dsm2_tx -Itest
+DEPCPPFLAGS := -MMD -MP -MF .deps/$(basename $<).dep
+CPPFLAGS ?= -Wall
 
 all: runtests
 
 .build/%.o: %.cpp
 	@mkdir -p .deps/$(dir $<) .build/$(dir $<)
-	$(COMPILE.cpp) $(TESTCPPFLAGS) $(CPPDEPFLAGS) -o $@ $<
+	$(COMPILE.cpp) $(TESTCPPFLAGS) $(DEPCPPFLAGS) -o $@ $<
 
 runtests: $(OBJECTS)
 	$(CC) $(OBJECTS) -lstdc++ -o $@
